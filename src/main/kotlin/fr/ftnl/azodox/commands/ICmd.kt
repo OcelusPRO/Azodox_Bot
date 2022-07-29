@@ -1,4 +1,4 @@
-package fr.ftnl.azodox
+package fr.ftnl.azodox.commands
 
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.Permission
@@ -17,7 +17,6 @@ import org.reflections.Reflections
 
 interface ICmd {
     val name : String
-    val localizedNames: Map<DiscordLocale, String>
     val permissions: List<Permission>
 
     companion object {
@@ -47,6 +46,7 @@ interface ICmd {
 
 interface IDataCmd: ICmd {
     val data: CommandData
+    val localizedNames: Map<DiscordLocale, String>
 }
 
 interface ISlashCmd: IDataCmd {
