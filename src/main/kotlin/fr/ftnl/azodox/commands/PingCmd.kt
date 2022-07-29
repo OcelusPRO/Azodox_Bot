@@ -1,9 +1,11 @@
-package fr.ftnl.azodox
+package fr.ftnl.azodox.commands
 
 import net.dv8tion.jda.api.Permission
+import net.dv8tion.jda.api.entities.emoji.Emoji
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent
 import net.dv8tion.jda.api.interactions.DiscordLocale
 import net.dv8tion.jda.api.interactions.commands.build.OptionData
+import net.dv8tion.jda.api.interactions.components.buttons.Button
 
 class PingCmd: ISlashCmd {
     override val description: String
@@ -12,7 +14,9 @@ class PingCmd: ISlashCmd {
         get() = listOf()
 
     override suspend fun action(event: SlashCommandInteractionEvent) {
-        event.reply("Pong").queue()
+        event.reply("Pong").addActionRow(
+            Button.primary("Test::", "Pong").withEmoji(Emoji.fromUnicode("\uD83D\uDE0A"))
+        ).queue()
     }
 
     override val name: String
