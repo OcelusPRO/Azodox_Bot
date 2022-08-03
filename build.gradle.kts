@@ -54,7 +54,7 @@ tasks.withType<KotlinCompile> {
 
 
 tasks.withType<ShadowJar> {
-    archiveBaseName.set("TranslateBot")
+    archiveBaseName.set("AzodoxBot")
     archiveClassifier.set("")
     archiveVersion.set(compileVersion)
 }
