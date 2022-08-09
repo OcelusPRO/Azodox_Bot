@@ -9,7 +9,7 @@ plugins {
 
 group = "fr.ftnl.azodox"
 val compileVersion: String = "1.0.0"
-var mainClassName: String = "${group}.Main"
+var mainClassName: String = "${group}.MainKt"
 
 repositories {
     mavenCentral()
